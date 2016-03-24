@@ -9,7 +9,6 @@ public class ConnectFourText {
 		//1 and X are used to represent user pieces
 		//2 and O are used to represent computer pieces
 		int[][] board = createBoard(6, 7);
-		FourInARow fourInARow = new FourInARow();
 		populateBoard(0, board);
 		displayBoard(board);
 		Scanner input = new Scanner(System.in);
@@ -25,13 +24,13 @@ public class ConnectFourText {
 			column = input.nextInt();
 		}
 		displayBoard(board);
-		if (fourInARow.checkFour(board, 1) == 1) {
+		if (FourInARow.checkFour(board, 1) == 1) {
 			System.out.println("You've won!!!");
 			break;
 		}
 		computerChoice(board, column);
 		displayBoard(board);
-		if (fourInARow.checkFour(board, 2) == 2) {
+		if (FourInARow.checkFour(board, 2) == 2) {
 			System.out.println("You've lost to a computer!!!");
 			break;
 		}
